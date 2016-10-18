@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Ryanc\\ApiDoc": "src/"
+            "Ryanc\\ApiDoc\\": "src/"
         }
     }
 }
