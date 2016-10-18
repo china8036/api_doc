@@ -1,0 +1,23 @@
+{
+    "name": "ryanc/api_doc",
+    "description": "auto gen api by reflection",
+    "keywords": ["api_doc", "api auto gen"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryanc",
+            "email": "china8036@126.com",
+            "homepage": "http://chaoma.me",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.3",
+        "phpdocumentor/reflection-docblock": "2.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ryanc\\ApiDoc": "src/"
+        }
+    }
+}
