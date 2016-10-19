@@ -21,12 +21,12 @@ class VoDocExtractor
     {
         $rf = new \ReflectionClass($class);
         $pp = $rf->getProperties();
-        $return = [];
+        $return['description'] = (new DocBlock($rf))->getShortDescription();
         foreach ($pp as $p) {
             if (!$p->isPublic()) {
                 continue;
             }
-            $return[] = $this->parseProperties($p);
+            $return['property'][] = $this->parseProperties($p);
         }
         return $return;
     }
@@ -44,6 +44,7 @@ class VoDocExtractor
             'desc' => $phpDoc->getShortDescription(),
             'name' => $rp->getName(),
             'type' => $tag->getType(),
+            'is_object' => (strpos($tag->getType(), '\\') === 0),
         ];
     }
 

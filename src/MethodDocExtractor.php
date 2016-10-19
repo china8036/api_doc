@@ -76,6 +76,7 @@ class MethodDocExtractor
         foreach ($return as $rtags) {
             $data[] = [
                 'type' => $rtags->getType(),
+                'is_object' => (strpos($rtags->getType(), '\\') === 0),
                 'desc' => $rtags->getDescription()
             ];
         }
