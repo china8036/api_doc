@@ -55,10 +55,12 @@ class MethodDocExtractor
                 $needed = false;
             }
             $fdesc = trim(str_replace(['[false]', '[true]'], '', $desc));
+            $type = $tag->getType();
             $data[] = [
-                'type' => $tag->getType(),
+                'type' => $type,
                 'name' => $tag->getVariableName(),
                 'desc' => $fdesc,
+                'is_object' => (strpos($type, '\\') === 0),
                 'needed' => $needed
             ];
         }
