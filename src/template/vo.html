@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title><?php echo $service; ?> - 在线接口文档</title>
+
+        <link rel="stylesheet" href="<?php echo $relatePath; ?>/semantic-ui/2.1.6/dist/semantic.min.css">
+        <link rel="stylesheet" href="<?php echo $relatePath; ?>/semantic-ui/2.1.6/dist/components/table.min.css">
+        <link rel="stylesheet" href="<?php echo $relatePath; ?>/semantic-ui/2.1.6/dist/components/container.min.css">
+        <link rel="stylesheet" href="<?php echo $relatePath; ?>/semantic-ui/2.1.6/dist/components/message.min.css">
+        <link rel="stylesheet" href="<?php echo $relatePath; ?>/semantic-ui/2.1.6/dist/components/label.min.css">
+
+    </head>
+
+    <body cclass="site pushable">
+
+        <br /> 
+
+        <div class="ui text" style="max-width: none !important;">
+            <div class="ui floating message">
+
+                <h2 class='ui header'><?php echo $class;?></h2><br/> 
+                <div class="ui raised segment">
+                    <span class="ui red ribbon label">说明</span>
+                    <div class="ui message">
+                        <p><?php echo $doc['description'];?></p>
+                    </div>
+                </div>
+
+                <h3>字段</h3>
+                <table class="ui green celled striped table" >
+                    <thead>
+                        <tr><th>名称</th><th>类型</th><th>说明</th></tr>
+                    </thead>
+                    <tbody>
+                                            
+                     <?php
+                                    foreach($doc['property'] as $rvo){
+                                      echo '<tr>';
+                                      echo '<td>';
+                                      if($rvo['is_object']){
+                                         echo '<a href="' . $relatePath . '/' . $rvo['href'] . '">' . $rvo['type'] . '</a>'; 
+                                      }else{
+                                          echo $rvo['type'];
+                                      }
+                                      echo '</td>';
+                                      echo '<td>' . $rvo['desc'] . '</td></tr>';
+                                    }
+                                    
+                                    ?>
+                 
+                    </tbody>
+                </table>
+                <!--        <div class="ui blue message">
+                            <strong>温馨提示：</strong> 此接口参数列表根据后台代码自动生成，可将 ?service= 改成您需要查询的接口/服务
+                        </div>-->
+                <p>&copy; Powered  By <a href="http://chaoma.me" target="_blank">chaoma.me</a> <p>
+            </div>
+        </div>
+        <script type="text/javasctipt" src="__PUBLIC__/Open/semantic-ui/2.1.6/dist/semantic.min.js"></script>
+    </body>
+</html>
+
+

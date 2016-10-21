@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title><?php echo $service;?> - 在线接口文档</title>
+        <link rel="stylesheet" href="<?php echo $relatePath; ?>/semantic-ui/2.1.6/dist/semantic.min.css">
+        <link rel="stylesheet" href="<?php echo $relatePath; ?>/semantic-ui/2.1.6/dist/components/table.min.css">
+        <link rel="stylesheet" href="<?php echo $relatePath; ?>/semantic-ui/2.1.6/dist/components/container.min.css">
+        <link rel="stylesheet" href="<?php echo $relatePath; ?>/semantic-ui/2.1.6/dist/components/message.min.css">
+        <link rel="stylesheet" href="<?php echo $relatePath; ?>/semantic-ui/2.1.6/dist/components/label.min.css">
+   
+
+    </head>
+
+    <body class="site pushable">
+        <div class="pusher">
+            <div class="ui">
+               
+
+                        <div class="ui message">
+
+                            <h2 class='ui header'><?php echo $service;?></h2><br/> 
+                            <!--                <span class='ui teal tag label'>..</span>-->
+
+                            <div class="ui raised segment">
+                                <span class="ui red ribbon label">接口说明</span>
+                                <div class="ui message">
+                                    <p><?php echo $docData['description']?></p>
+                                </div>
+                            </div>
+                            <h3>接口参数</h3>
+                            <table class="ui red celled striped table" >
+                                <thead>
+                                    <tr><th>参数名字</th><th>类型</th><th>是否必须</th><th>说明</th></tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    foreach($docData['params'] as $vo){
+                                      echo '<tr><td>' . $vo['name'] . '</td>';
+                                      echo '<td>';
+                                      if($vo['is_object']){
+                                         echo '<a href="' . $relatePath . '/' . $vo['href'] . '">' . $vo['type'] . '</a>'; 
+                                      }else{
+                                          echo $vo['type'];
+                                      }
+                                      echo '</td>';
+                                      echo '<td>';
+                                      if($vo['needed']){
+                                        echo '是';
+                                      }else{
+                                      echo '否';
+                                      }
+                                      echo '</td>';
+                                      echo '<td>' . $vo['desc'] . '</td></tr>';
+                                    }
+                                    
+                                    ?>
+
+
+
+                </tbody>
+            </table>
+            <h3>返回结果</h3>
+            <table class="ui green celled striped table" >
+                <thead>
+                    <tr><th>类型</th><th>说明</th></tr>
+                </thead>
+                <tbody>
+                    
+                     <?php
+                                    foreach($docData['return'] as $rvo){
+                                      echo '<tr>';
+                                      echo '<td>';
+                                      if($rvo['is_object']){
+                                         echo '<a href="' . $relatePath  . '/' . $rvo['href'] . '">' . $rvo['type'] . '</a>'; 
+                                      }else{
+                                          echo $rvo['type'];
+                                      }
+                                      echo '</td>';
+                                      echo '<td>' . $rvo['desc'] . '</td></tr>';
+                                    }
+                                    
+                                    ?>
+               
+        </tbody>
+    </table>
+    <!--        <div class="ui blue message">
+                <strong>温馨提示：</strong> 此接口参数列表根据后台代码自动生成，可将 ?service= 改成您需要查询的接口/服务
+            </div>-->
+    <p>&copy; Powered  By <a href="http://chaoma.me" target="_blank">chaoma.me</a> <p>
+</div>
+</div>
+
+</div>
+
+</body>
+</html>
+
+
