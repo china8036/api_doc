@@ -8,86 +8,82 @@
         <link rel="stylesheet" href="./static/semantic-ui/2.1.6/dist/components/container.min.css">
         <link rel="stylesheet" href="./static/semantic-ui/2.1.6/dist/components/message.min.css">
         <link rel="stylesheet" href="./static/semantic-ui/2.1.6/dist/components/label.min.css">
-   
+
 
     </head>
 
     <body class="site">
         <div class="ui container">
-<div class="ui statistics">
-  <div class="red statistic">
-    <div class="value">
-      27
+            <div class="no example">
+                <h4 class="ui header">注释样例 </h4><a class="anchor" id=""></a>
+                <p>Api.Oauth2.authorize</p>
+                <div class="ui existing segment"><pre>
+<code class="code php">
+                    
+    /**
+     * 第一步：授权
+     * @param string $client_id 分配的client_id
+     * @param string $redirect_uri 授权回调地址，
+     * 站外应用需与设置的回调地址一致，站内应用需填写canvas page的地址。
+     * @param string $response_type 授权类型
+     * @param string $scope 申请scope权限所需参数，可一次申请多个scope权限，用空格分隔 [false]
+     * @param string $state 用于保持请求和回调的状态，在回调时，会在Query Parameter中回传该参数。
+     * 开发者可以用这个参数验证请求有效性，也可以记录用户请求授权页前的位置。这个参数可用于防止跨站请求伪造（CSRF）攻击
+     * @param string $display  授权页面的终端类型，待实现，取值见下面的说明。
+     * @param string $local 授权页语言，缺省为中文简体版，en为英文版。英文版测试中，开发者任何意见可反馈至 @微博API
+     * @return Api\Oauth2\Authorize  返回 Authorize VO类
+     */
+    public function authorize() {
+
+
+</code></pre>
                 </div>
-    <div class="label">Red </div>
             </div>
-  <div class="orange statistic">
-    <div class="value">
-      8
+
+
+            <div class="ui">
+
+
+                <div class="ui message">
+
+                    <h2 class="ui header">Api.Oauth2.authorize</h2><br> 
+                    <!--                <span class='ui teal tag label'>..</span>-->
+
+                    <div class="ui raised segment">
+                        <span class="ui red ribbon label">接口说明</span>
+                        <div class="ui message">
+                            <p>第一步：授权</p>
+                        </div>
+                    </div>
+                    <h3>接口参数</h3>
+                    <table class="ui red celled striped table">
+                        <thead>
+                            <tr><th>参数名字</th><th>类型</th><th>是否必须</th><th>说明</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>$client_id</td><td>string</td><td>是</td><td>分配的client_id</td></tr><tr><td>$redirect_uri</td><td>string</td><td>是</td><td>授权回调地址，
+                                    站外应用需与设置的回调地址一致，站内应用需填写canvas page的地址。</td></tr><tr><td>$response_type</td><td>string</td><td>是</td><td>授权类型</td></tr><tr><td>$scope</td><td>string</td><td>否</td><td>申请scope权限所需参数，可一次申请多个scope权限，用空格分隔</td></tr><tr><td>$state</td><td>string</td><td>是</td><td>用于保持请求和回调的状态，在回调时，会在Query Parameter中回传该参数。
+                                    开发者可以用这个参数验证请求有效性，也可以记录用户请求授权页前的位置。这个参数可用于防止跨站请求伪造（CSRF）攻击</td></tr><tr><td>$display</td><td>string</td><td>是</td><td>授权页面的终端类型，待实现，取值见下面的说明。</td></tr><tr><td>$local</td><td>string</td><td>是</td><td>授权页语言，缺省为中文简体版，en为英文版。英文版测试中，开发者任何意见可反馈至 @微博API</td></tr>
+
+
+                        </tbody>
+                    </table>
+                    <h3>返回结果</h3>
+                    <table class="ui green celled striped table">
+                        <thead>
+                            <tr><th>类型</th><th>说明</th></tr>
+                        </thead>
+                        <tbody>
+
+                            <tr><td><a href="../../Vo/9/ea802cb8cf2081ae5519ff97452038c.html">\Api\Oauth2\Authorize</a></td><td>返回 Authorize VO类</td></tr>               
+                        </tbody>
+                    </table>
+                    <!--        <div class="ui blue message">
+                                <strong>温馨提示：</strong> 此接口参数列表根据后台代码自动生成，可将 ?service= 改成您需要查询的接口/服务
+                            </div>-->
+                    <p>© Powered  By <a href="http://chaoma.me" target="_blank">chaoma.me</a> </p><p>
+                    </p></div>
+            </div>
         </div>
-    <div class="label">Orange </div>
-  </div>
-  <div class="yellow statistic">
-    <div class="value">
-      28
-    </div>
-    <div class="label">Yellow </div>
-  </div>
-  <div class="olive statistic">
-    <div class="value">
-      7
-    </div>
-    <div class="label">Olive </div>
-  </div>
-  <div class="green statistic">
-    <div class="value">
-      14
-    </div>
-    <div class="label">Green </div>
-  </div>
-  <div class="teal statistic">
-    <div class="value">
-      82
-    </div>
-    <div class="label">Teal </div>
-  </div>
-  <div class="blue statistic">
-    <div class="value">
-      1
-    </div>
-    <div class="label">Blue </div>
-  </div>
-  <div class="violet statistic">
-    <div class="value">
-      22
-    </div>
-    <div class="label">Violet </div>
-  </div>
-  <div class="purple statistic">
-    <div class="value">
-      23
-    </div>
-    <div class="label">Purple </div>
-  </div>
-  <div class="pink statistic">
-    <div class="value">
-      15
-    </div>
-    <div class="label">Pink </div>
-  </div>
-  <div class="brown statistic">
-    <div class="value">
-      36
-    </div>
-    <div class="label">Brown </div>
-  </div>
-  <div class="grey statistic">
-    <div class="value">
-      49
-    </div>
-    <div class="label">Grey </div>
-  </div>
-</div>
-</div>
     </body>
 </html>
