@@ -4,11 +4,11 @@
         <meta charset="utf-8">
         <title>潮妈帮Api文档中心</title>
 
-        <link rel="stylesheet" href="semantic-ui/2.1.6/dist/semantic.min.css">
-        <link rel="stylesheet" href="semantic-ui/2.1.6/dist/components/table.min.css">
-        <link rel="stylesheet" href="semantic-ui/2.1.6/dist/components/container.min.css">
-        <link rel="stylesheet" href="semantic-ui/2.1.6/dist/components/message.min.css">
-        <link rel="stylesheet" href="semantic-ui/2.1.6/dist/components/label.min.css">
+        <link rel="stylesheet" href="./static/semantic-ui/2.1.6/dist/semantic.min.css">
+        <link rel="stylesheet" href="./static/semantic-ui/2.1.6/dist/components/table.min.css">
+        <link rel="stylesheet" href="./static/semantic-ui/2.1.6/dist/components/container.min.css">
+        <link rel="stylesheet" href="./static/semantic-ui/2.1.6/dist/components/message.min.css">
+        <link rel="stylesheet" href="./static/semantic-ui/2.1.6/dist/components/label.min.css">
 
 
     </head>
@@ -30,11 +30,6 @@
                             }
 
                             ?>
-                            <foreach name="apis" item="avo" >
-                                <foreach name="avo" item="ser" key='skey' >
-                                    <a href="<php>echo \Open\Service\Doc::getApiLinkByService($ser);</php>" class="item <php>if(strtolower($ser) == $service){echo 'active';}</php>" title="{$ser|strtolower}" alt='{$ser|strtolower}'>{$ser|strtolower} </a>
-                                </foreach>
-                            </foreach>
                         </div>
                     </div>
           
@@ -42,7 +37,13 @@
                 </div>
             </div>
         </div>
-
+       <script rype="text/javascript" src="./static/js/jquery.min.js"></script>
+        <script rype="text/javascript" src="./static/semantic-ui/2.1.6/dist/semantic.min.js"></script>
+        <script type="text/javascript">
+                 $('.item').click(function(){
+                     $(this).addClass('active').siblings().removeClass('active');
+                 })
+            </script>
 
     </body>
 </html>

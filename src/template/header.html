@@ -3,16 +3,19 @@
     <head>
         <meta charset="utf-8">
         <title><?php echo $title;?></title>
-        <link rel="stylesheet" href="<?php echo $relatePath; ?>/semantic-ui/2.1.6/dist/semantic.min.css">
-        <link rel="stylesheet" href="<?php echo $relatePath; ?>/semantic-ui/2.1.6/dist/components/table.min.css">
-        <link rel="stylesheet" href="<?php echo $relatePath; ?>/semantic-ui/2.1.6/dist/components/container.min.css">
-        <link rel="stylesheet" href="<?php echo $relatePath; ?>/semantic-ui/2.1.6/dist/components/message.min.css">
-        <link rel="stylesheet" href="<?php echo $relatePath; ?>/semantic-ui/2.1.6/dist/components/label.min.css">
+        <link rel="stylesheet" href="./static/semantic-ui/2.1.6/dist/semantic.min.css">
+        <link rel="stylesheet" href="./static/semantic-ui/2.1.6/dist/components/table.min.css">
+        <link rel="stylesheet" href="./static/semantic-ui/2.1.6/dist/components/container.min.css">
+        <link rel="stylesheet" href="./static/semantic-ui/2.1.6/dist/components/message.min.css">
+        <link rel="stylesheet" href="./static/semantic-ui/2.1.6/dist/components/label.min.css">
    
 
     </head>
 
-    <body class="site pushable">
-<?php echo $title; ?>
+    <body class="site">
+        <div class="ui secondary pointing menu">
+            <a class="active item"><?php echo $title; ?> </a>
+        </div>
+ 
     </body>
 </html>
